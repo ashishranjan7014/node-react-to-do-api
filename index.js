@@ -1,3 +1,9 @@
-// run `node index.js` in the terminal
+import Express from 'express';
+import Cors from 'cors';
+const App = Express();
+App.use(Cors());
+const port = process.env.PORT || 8080;
 
-console.log(`Hello Node.js v${process.versions.node}!`);
+App.listen(port, () => {
+  console.log(`server is running on port ${port}`);
+});
